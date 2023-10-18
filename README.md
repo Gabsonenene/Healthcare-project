@@ -11,7 +11,7 @@ This machine learning project aims to identify the optimal algorithm for classif
 The datasets include diseases such as heart disease, diabetes, liver disease, HCV infection, breast cancer and cervical cancer.
 
 ## Tools and Environment
-This analysis was carried out using a Jupyter Notebook and Python programming language. In this study, numpy, pandas, sklearn, seaborn, and matplotlib libraries were used.
+This analysis was carried out using a Jupyter Notebook and Python programming language. In this study, numpy, pandas, sklearn, seaborn, and matplotlib libraries were used. Supervised learning algorithms: KNN, SVM, random forest, naïve Bayes, logistic regression, and XGBoost.
 
 # Results
 ## F2 metric scores for supervised learning algorithms in preliminary evaluation using cross-validation:
