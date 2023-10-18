@@ -1,6 +1,17 @@
 # Healthcare project
-# Project Description: Machine Learning Algorithms in Healthcare
+# Machine Learning Algorithms in Healthcare
+# Table of Contents
 
+- [Project Description](#project-description)
+- [Objective](#objective)
+- [Methodology](#methodology)
+  - [Data Sets](#data-sets)
+  - [Tools and Environment](#tools-and-environment)
+- [Results](#results)
+- [Conclusion](#conclusion)
+- [Keywords](#keywords)
+#
+# Project Description
 The health care sector is facing numerous problems, such as an aging population, burnout and fatigue of medical workers, staff shortages, etc. Machine learning algorithms can be a valuable tool supporting the functioning of this sector. There are numerous benefits resulting from the use of artificial intelligence methods during diagnosis, prevention and management of patients' medical data. The healthcare sector faces numerous challenges and threats resulting from the introduction of machine learning tools, but these tools are necessary to improve work efficiency and increase the level of patient safety.
 
 # Objective
