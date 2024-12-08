@@ -75,3 +75,80 @@ This project highlights the importance of machine learning algorithms in the dia
 
 # Keywords: 
 * machine learning, medicine, healthcare, artificial intelligence, KNN, SVM, random forest, naïve Bayes, logistic regression, XGBoost, RandomSearch, GridSearch.
+
+
+
+
+# Projekt Zastosowanie różnych technik uczenia maszynowego do analizy danych medycznych
+# Spis Treści
+
+- [Opis Projektu](#opis-projektu)
+- [Cel](#cel)
+- [Metodologia](#metodologia)
+  - [Zbiory Danych](#zbiory-danych)
+  - [Narzędzia i Środowisko](#narzędzia-i-środowisko)
+- [Wyniki](#wyniki)
+- [Wnioski](#wnioski)
+- [Słowa Kluczowe](#słowa-kluczowe)
+#
+# Opis Projektu
+Sektor ochrony zdrowia boryka się z wieloma problemami, takimi jak starzenie się społeczeństwa, wypalenie zawodowe i zmęczenie pracowników medycznych, niedobór personelu itp. Algorytmy uczenia maszynowego mogą być cennym narzędziem wspierającym funkcjonowanie tego sektora. Istnieje wiele korzyści wynikających z wykorzystania metod sztucznej inteligencji podczas diagnozy, profilaktyki oraz zarządzania danymi medycznymi pacjentów. Sektor ochrony zdrowia stoi jednak także przed licznymi wyzwaniami i zagrożeniami związanymi z wprowadzeniem narzędzi uczenia maszynowego, ale ich zastosowanie jest konieczne, aby poprawić efektywność pracy oraz zwiększyć poziom bezpieczeństwa pacjentów.
+
+# Cel
+Celem tego projektu uczenia maszynowego jest zidentyfikowanie optymalnego algorytmu do klasyfikacji pacjentów na odpowiednie grupy ryzyka dla określonych chorób. Projekt wykorzystuje siedem algorytmów uczenia nadzorowanego (KNN, SVM, random forest, naiwny Bayes, regresja logistyczna i XGBoost) do analizy danych medycznych i identyfikacji kluczowych czynników wpływających na przypisanie do danej grupy ryzyka. Drugim celem analizy było określenie, które cechy są najważniejsze dla konkretnego zbioru danych medycznych. Dodatkowo wykorzystano metody grid search i random search do określenia, który algorytm jest optymalny przy zastosowaniu wielu zbiorów danych i dostosowywaniu hiperparametrów.
+
+# Metodologia
+## Zbiory Danych
+Zbiory danych obejmują choroby takie jak choroby serca, cukrzyca, choroby wątroby, zakażenie HCV, rak piersi i rak szyjki macicy.
+
+## Narzędzia i Środowisko
+Analizę przeprowadzono przy użyciu środowiska Jupyter Notebook i języka programowania Python. W badaniu wykorzystano biblioteki numpy, pandas, sklearn, seaborn i matplotlib. Algorytmy uczenia nadzorowanego to: KNN, SVM, random forest, naiwny Bayes, regresja logistyczna i XGBoost.
+
+# Wyniki
+## Wyniki metryki F2 dla algorytmów uczenia nadzorowanego w ocenie wstępnej z użyciem walidacji krzyżowej:
+
+| Zbiór Danych     | KNN  | RF   | CART | NB   | LogR | SVM  | XGB  |
+|------------------|------|------|------|------|------|------|------|
+| Choroby serca    | 0.67 | 0.83 | 0.76 | 0.81 | 0.82 | 0.84 | 0.86 |
+| Cukrzyca         | 0.51 | 0.56 | 0.44 | 0.59 | 0.48 | 0.63 | 0.62 |
+| HCV              | 0.76 | 0.79 | 0.63 | 0.63 | 0.65 | 0.70 | 0.91 |
+| Choroby wątroby  | 0.78 | 0.86 | 0.85 | 0.48 | 0.88 | 0.85 | 0.80 |
+| Rak piersi       | 0.82 | 0.75 | 0.68 | 0.44 | 0.68 | 0.69 | 0.82 |
+| Rak szyjki macicy| 0.02 | 0.60 | 0.54 | 0.79 | 0.53 | 0.82 | 0.63 |
+| **Średnia**      | 0.59 | 0.7  | 0.65 | 0.62 | 0.67 | 0.76 | 0.77 |
+
+Najlepszy model według oceny wstępnej to XGB (średnia wartość 0.77), następnie SVM (0.76), a na trzecim miejscu RF. Najgorzej wypadł klasyfikator KNN z wynikiem 0.59.
+
+## Wyniki metryki F2 dla algorytmów uczenia nadzorowanego w ostatecznej ocenie na zestawie testowym:
+
+| Zbiór Danych     | KNN  | RF   | CART | NB   | LogR | SVM  | XGB  |
+|------------------|------|------|------|------|------|------|------|
+| Choroby serca    | 0.84 | 0.83 | 0.89 | 0.82 | 0.83 | 0.84 | 0.82 |
+| Cukrzyca         | 0.47 | 0.52 | 0.49 | 0.51 | 0.52 | 0.52 | 0.65 |
+| HCV              | 0.81 | 0.93 | 0.91 | 0.71 | 0.79 | 0.80 | 0.89 |
+| Choroby wątroby  | 0.74 | 0.74 | 0.49 | 0.41 | 0.62 | 0.52 | 0.92 |
+| Rak piersi       | 0.71 | 0.81 | 0.75 | 0.44 | 0.68 | 0.65 | 0.76 |
+| Rak szyjki macicy| 0.55 | 0.70 | 0.65 | 0.70 | 0.70 | 0.70 | 0.56 |
+| **Średnia**      | 0.69 | 0.76 | 0.70 | 0.60 | 0.69 | 0.67 | 0.77 |
+
+Najlepszy model na podstawie danych testowych to XGB (średnia wartość 0.77), drugi RF (0.76), a trzeci CART (0.70).
+
+## Wyniki AUC dla algorytmów uczenia nadzorowanego w ostatecznej ocenie na zestawie testowym:
+
+| Zbiór Danych     | KNN  | RF   | CART | NB   | LogR | SVM  | XGB  |
+|------------------|------|------|------|------|------|------|------|
+| Choroby serca    | 0.86 | 0.86 | 0.87 | 0.86 | 0.86 | 0.87 | 0.84 |
+| Cukrzyca         | 0.62 | 0.67 | 0.66 | 0.65 | 0.67 | 0.67 | 0.74 |
+| HCV              | 0.89 | 0.96 | 0.95 | 0.83 | 0.88 | 0.89 | 0.93 |
+| Choroby wątroby  | 0.56 | 0.56 | 0.62 | 0.62 | 0.68 | 0.63 | 0.55 |
+| Rak piersi       | 0.76 | 0.70 | 0.66 | 0.69 | 0.62 | 0.72 | 0.70 |
+| Rak szyjki macicy| 0.75 | 0.84 | 0.82 | 0.84 | 0.84 | 0.84 | 0.76 |
+| **Średnia**      | 0.74 | 0.77 | 0.76 | 0.75 | 0.77 | 0.77 | 0.75 |
+
+Najlepsze wyniki AUC uzyskały modele RF, LogR i SVM (średnia 0.77). 
+
+# Wnioski
+W analizie danych medycznych najlepiej sprawdziły się algorytmy zespołowe, takie jak XGBoost, zwłaszcza dla danych niezrównoważonych. Projekt podkreśla znaczenie algorytmów uczenia maszynowego w diagnostyce i leczeniu chorób oraz potrzebę dalszego rozwoju algorytmów sztucznej inteligencji w ochronie zdrowia.
+
+# Słowa Kluczowe:
+* uczenie maszynowe, medycyna, ochrona zdrowia, sztuczna inteligencja, KNN, SVM, random forest, naiwny Bayes, regresja logistyczna, XGBoost, RandomSearch, GridSearch.
